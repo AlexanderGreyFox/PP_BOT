@@ -23,14 +23,14 @@ class Handler:
     def help(self):
         pass
 
-    @dp.message_handler(regexp='([Рр]ецепт)')
+    @dp.message_handler(lambda message: message.text and 'рецепт дня' in message.text.lower())
     def random_recipe(self):
         pass
 
-    @dp.message_handler(lambda message: message.text and 'Рецепт' in message.text.lower())
+    @dp.message_handler(lambda message: message.text and 'рецепт из' in message.text.lower())
     async def recipe_handler(self, message: types.Message):
         pass
 
-    @dp.message_handler(lambda message: message.text and 'Калорийность' in message.text.lower())
+    @dp.message_handler(lambda message: message.text and 'калорийность' in message.text.lower())
     async def caloric_value(self, message: types.Message):
         pass
